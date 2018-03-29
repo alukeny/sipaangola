@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from rest_framework import  serializers
-from .models import orgao, categoria, posto, servico, cidadao, agente, diasuteis
+from .models import orgao, categoria, posto, servico, cidadao, agente, diasuteis, agendamento, Event
 from django.contrib.auth.models import User
 from django.db import transaction
 
@@ -49,20 +49,36 @@ class userSerializer(serializers.ModelSerializer):
         fields = ('username')
 
 
-class cidadaoSerializer():
-    utilizador = userSerializer(required=True)
+class cidadaoSerializer(serializers.ModelSerializer):
+    utilizador = serializers.StringRelatedField(many=False)
 
     class Meta:
         model = cidadao
-        fields = ('user','nome','sobrenome','email','tel','endereco')
+        fields = ('utilizador','nome','sobrenome','numerobi','email','tel','endereco')
 
 
-class agenteSerializer():
-    utilizador = userSerializer(required=True)
+class agenteSerializer(serializers.ModelSerializer):
+    utilizador = serializers.StringRelatedField(many=False)
     posto = serializers.StringRelatedField(many=False)
 
     class Meta:
         model = agente
-        fields = ('user','nome','sobrenome','email','tel','endereco', 'posto')
+        fields = ('utilizador','nome','sobrenome','email','tel','endereco', 'posto')
 
 
+class agendamentoSerializer(serializers.ModelSerializer):
+    utilizador = serializers.StringRelatedField(many=False)
+    posto = serializers.StringRelatedField(many=False)
+    diasuteis = serializers.StringRelatedField(many=True)
+    agenda = serializers.StringRelatedField(many=False)
+
+    class Meta:
+        model = agendamento
+        fields = ('utilizador', 'posto', 'diasuteis', 'agenda', 'estado')
+
+
+class marcacaoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Event
+        fields = ('day', 'start_time', 'end_time', 'notes')

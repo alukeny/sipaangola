@@ -97,6 +97,7 @@ class posto(models.Model):
 class cidadao(models.Model):
     nome=models.CharField(max_length=50, verbose_name='Nome')
     sobrenome=models.CharField(max_length=50, verbose_name='Sobrenome')
+    numerobi=models.CharField(max_length=14, verbose_name='Nº Bilhete de Identidade')
     tel=models.CharField(max_length=20, verbose_name='Telefone')
     email=models.EmailField(default='eu@exemplo.com', verbose_name='E-mail')
     endereco=models.CharField(max_length=50, verbose_name='Morada')
@@ -181,8 +182,8 @@ class agendamento(models.Model):
 
     utilizador = models.OneToOneField(User)
     posto = models.ForeignKey(posto, related_name='postos', on_delete=models.CASCADE)
-    diasuteis = models.ManyToManyField(diasuteis, verbose_name='Dias Utéis')
-    agenda = models.OneToOneField(Event, verbose_name='Selecioana a Marcação')
+    diasuteis = models.ManyToManyField(diasuteis, verbose_name='Serviços e Dias Utéis')
+    agenda = models.OneToOneField(Event, verbose_name='Marcação')
     estado = models.CharField(max_length=20, verbose_name='Estado do Pedido', default='Aberto', choices=ESTADO_CHOICES)
 
     class Meta:

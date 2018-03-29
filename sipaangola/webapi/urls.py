@@ -16,5 +16,9 @@ urlpatterns = [
     url(r'^agente/(?P<pk>[0-9]+)$', views.agenteDetalhes.as_view()),
     url(r'^diasuteis/$', views.diasuteisLista.as_view()),
     url(r'^diasuteis/(?P<pk>[0-9]+)$', views.diasuteisDetalhes.as_view()),
+    url(r'^agendamento/$', views.agendamentoLista.as_view()),
+    url(r'^agendamento/(?P<pk>[0-9]+)$', views.agendamentoDetalhes.as_view()),
+    url(r'^marcacao/$', views.marcacaoLista.as_view()),
+    url(r'^marcacao/(?P<pk>[0-9]+)$', views.marcacaoDetalhes.as_view()),
 ]
 
