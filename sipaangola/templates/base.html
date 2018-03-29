@@ -1,0 +1,146 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>SIPA - Sistema Integrado Público de Agendamento</title>
+    <link rel="shortcut icon" href="static/img/sipa_icone.ico">
+    <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
+    <link href="static/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type='text/javascript' src='static/js/jquery-2.2.3.min.js'></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<!--meta data-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Agendamento Online, Sistema Público, Sistema de Agendamento, Android Compatible web template" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--//meta data-->
+<!-- online fonts -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<!-- /online fonts -->
+</head>
+<body>
+{% block content %}
+{% endblock %}
+<!--footer-->
+<footer>
+	<div class="container-fluid">
+		<div class="w3-agile-footer-top-at">
+			<div class="col-md-2 agileits-amet-sed">
+				<h4>SIPA</h4>
+				<ul class="w3ls-nav-bottom">
+					<li><a href="about.html">Sobre</a></li>
+					<li><a href="support.html">Suporte</a></li>
+					<li><a href="sitemap.html">Mapa do Site</a></li>
+					<li><a href="terms.html">Termos & Condições</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="#mobileappagileits" class="scroll">Móvel</a></li>
+					<li><a href="feedback.html">Feedback</a></li>
+					<li><a href="contact.html">Contacto</a></li>
+					<li><a href="shortcodes.html">Shortcodes</a></li>
+					<li><a href="icons.html">Icons Page</a></li>
+
+				</ul>
+			</div>
+		<div class="clearfix"> </div>
+		</div>
+    </div>
+	<div class="w3l-footer-bottom">
+		<div class="container-fluid">
+			<div class="col-md-4 w3-footer-logo">
+				<h2><a href="index.html"><img src="static/img/sipa_icone.png" alt="SIPA" width="10%" height="10%"></a></h2>
+			</div>
+			<div class="col-md-8 agileits-footer-class">
+				<p >© 2018 SIPA. Todos os direitos reservados | Powered by  <a href="http://admartec.net/" target="_blank"><img src="static/img/admartec.png" alt="ADMARTEC" width="5%" height="5%"></a> </p>
+			</div>
+		<div class="clearfix"> </div>
+	 	</div>
+	</div>
+</footer>
+<!--//footer-->
+<!-- Area JavaScript -->
+<!-- for bootstrap working -->
+    <script src="static/js/bootstrap.js"></script>
+<!-- //for bootstrap working --><!-- Responsive-slider -->
+<!-- Banner-slider -->
+    <script src="static/js/responsiveslides.min.js"></script>
+    <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+<!-- //Banner-slider -->
+<!-- //Responsive-slider -->
+<!-- Bootstrap select option script -->
+    <script src="static/js/bootstrap-select.js"></script>
+    <script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
+<!-- //Bootstrap select option script -->
+
+<!-- easy-responsive-tabs -->
+    <link rel="stylesheet" type="text/css" href="static/css/easy-responsive-tabs.css " />
+    <script src="static/js/easyResponsiveTabs.js"></script>
+<!-- //easy-responsive-tabs -->
+<!-- here stars scrolling icon -->
+    <script type="text/javascript">
+				$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear'
+						};
+					*/
+
+					$().UItoTop({ easingType: 'easeOutQuart' });
+
+					});
+			</script>
+<!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="static/js/move-top.js"></script>
+    <script type="text/javascript" src="static/js/easing.js"></script>
+    <script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+			</script>
+<!-- start-smoth-scrolling -->
+<!-- //here ends scrolling icon -->
+<!--// Area JavaScript -->
+</body>
+</html>
